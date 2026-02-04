@@ -1,0 +1,5 @@
+config BR2_PACKAGE_SECURITY_APP
+	bool "security-app"
+	help
+	  User-space application for the Security Sensor system.
+	  Monitors the security sensor driver and reports alerts.
