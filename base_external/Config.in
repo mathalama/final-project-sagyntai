@@ -1,0 +1,1 @@
+source "$BR2_EXTERNAL_PROJECT_BASE_PATH/package/security-driver/Config.in"

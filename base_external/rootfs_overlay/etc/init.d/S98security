@@ -1,0 +1,19 @@
+#!/bin/sh
+case "$1" in
+  start)
+    echo "Starting Security Sensor"
+    modprobe security_mod
+    major=$(awk '$2=="security_sensor" {print $1}' /proc/devices)
+    if [ -n "$major" ]; then
+        rm -f /dev/security_sensor
+        mknod /dev/security_sensor c $major 0
+        chmod 666 /dev/security_sensor
+    fi
+    ;;
+  stop)
+    echo "Stopping Security Sensor"
+    rmmod security_mod
+    rm -f /dev/security_sensor
+    ;;
+esac
+exit 0

@@ -1,0 +1,5 @@
+config BR2_PACKAGE_SECURITY_DRIVER
+	bool "security-driver"
+	depends on BR2_LINUX_KERNEL
+	help
+	  Custom security sensor driver for Final Project.
